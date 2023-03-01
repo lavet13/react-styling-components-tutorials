@@ -5,21 +5,35 @@ import './CourseInput.css';
 
 const CourseInput = ({ onAddGoal }) => {
     const [enteredValue, setEnteredValue] = useState('');
+    const [isValid, setIsValid] = useState(true);
 
     const goalInputChangeHandler = e => {
+        if (e.target.value.trim().length > 0) setIsValid(true);
+
         setEnteredValue(e.target.value);
     };
 
     const formSubmitHandler = e => {
         e.preventDefault();
-        onAddGoal(enteredValue);
+
+        if (enteredValue.trim().length === 0) {
+            setIsValid(false);
+            return;
+        }
+
+        onAddGoal(enteredValue.trim());
+        setEnteredValue('');
     };
 
     return (
         <form onSubmit={formSubmitHandler}>
-            <div className="form-control">
+            <div className={`form-control ${!isValid ? 'invalid' : ''}`.trim()}>
                 <label>Course Goal</label>
-                <input type="text" onChange={goalInputChangeHandler} />
+                <input
+                    type="text"
+                    onChange={goalInputChangeHandler}
+                    value={enteredValue}
+                />
             </div>
             <Button type="submit">Add Goal</Button>
         </form>
