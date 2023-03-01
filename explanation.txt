@@ -1,0 +1,15 @@
+Building we apps with React is not just about composing components together and making sure that the logic works correctly. That arguably is
+the most important part, where at least it's the biggest reason for using React. But building React apps is also about styling those apps.
+You wanna make sure that your application look good and styling is also an important part of building components. And there are different
+techniques for setting styles dynamically and for styling components such that other components are not affected by a specific component's
+styles.
+
+In this module:
+ - Conditional & Dynamic styles(how you can switch certain styles based on some conditions, for example, if a user enters an invalid input
+then you want to color the input field red).
+
+We will dive into two popular approaches for scoping styles to components:
+For setting up styles such that they only affect the component and are not added as global styles.
+ - Styled components, which is a third-party library, a very popular one, which allows us to set up pre-styled components with their own
+scoped styles. And we'll have a look at a concept called CSS modules. And you will learn what these different approaches are all about
+how you do work with them, and how you could add them to your next project.
