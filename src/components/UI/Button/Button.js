@@ -24,6 +24,10 @@ const Button = styled.button`
         border-color: #ac0e77;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
     }
+
+    @media only screen and (max-width: 37.5em) {
+        width: 100%;
+    }
 `;
 
 // const Button = ({ type, onClick, children }) => {
