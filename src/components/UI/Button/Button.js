@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
+// import './Button.css';
 
-import './Button.css';
+import styles from './Button.module.css'; // this is how you have to import a css file if you wanna use CSS modules
 
-// tagged template literal
-// what does this do? button is simply a method on this styled object.
-// It's just a special kind of method you could say.
+/*
 const Button = styled.button`
     font: inherit;
     padding: 0.5rem 1.5rem;
@@ -29,15 +28,19 @@ const Button = styled.button`
         width: 100%;
     }
 `;
+*/
 
-// const Button = ({ type, onClick, children }) => {
-//     return (
-//         <button type={type} className="button" onClick={onClick}>
-//             {children}
-//         </button>
-//     );
-// };
+const Button = ({ type, onClick, children }) => {
+    return (
+        <button type={type} className={styles.button} onClick={onClick}>
+            {children}
+        </button>
+    );
+};
 
+// tagged template literal
+// what does this do? button is simply a method on this styled object.
+// It's just a special kind of method you could say.
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates
 // https://styled-components.com/
 
